@@ -1,0 +1,56 @@
+/* COREWARD — page styling. The game itself is drawn entirely on the canvas;
+   this sheet only frames it: a black void, the canvas centred and scaled to
+   the largest 16:9 box the window allows, and a soft halo behind it. */
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #04040a;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+#stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  background:
+    radial-gradient(60% 50% at 50% 42%, rgba(64, 32, 128, 0.28), transparent 70%),
+    radial-gradient(40% 35% at 78% 80%, rgba(10, 90, 110, 0.22), transparent 70%),
+    #04040a;
+}
+
+#game {
+  display: block;
+  width: min(100vw, 177.78vh);
+  height: min(56.25vw, 100vh);
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 1px rgba(87, 247, 224, 0.14),
+    0 0 64px rgba(80, 40, 180, 0.35),
+    0 24px 80px rgba(0, 0, 0, 0.8);
+  cursor: crosshair;
+  touch-action: none;
+}
+
+#fallback {
+  color: #d9f6ff;
+  font-size: 18px;
+}
